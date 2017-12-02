@@ -1,0 +1,5 @@
+Need to buy:
+{{#each items}}
+{{name}}{{#js_compare "this.price_new > 0"}} - {{price_new}} ${{/js_compare}} x {{quantity}} pcs.{{#js_compare "this.advertiser.length > 0"}} ({{advertiser}}){{/js_compare}}{{#if @last}}. {{else}}, {{/if}}
+{{/each}}
+Total: {{number}} items at {{sum}} $

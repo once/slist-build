@@ -1,0 +1,109 @@
+
+    <ul>
+         
+    {{#each items}}
+        
+        {{#js_compare "this.type === 'simple'"}}
+        
+                <li data-id="{{id}}" data-index="{{@index}}" class="swipeout item-content sl-simple-item{{#if crossedOut}} crossed-out{{/if}}">
+                    <div class="swipeout-content">
+                        <a href="simpleitem.html?id={{id}}">
+                            <div class="item-inner">
+                                <div class="item-title">{{name}}</div>
+                                <div class="item-subtitle">
+                                    {{#if price_new}}
+                                        <span class="food-newprice-list">{{price_new}} $</span>
+                                    {{/if}}
+                                    x <span class="shoppinglist-quantity">{{quantity}}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swipeout-actions-left">
+                                {{#js_compare "this.crossedOut == false"}}
+                                        <a class="bg-blue action-buy swipeout-overswipe" href="#">Buy</a>
+                                    {{else}}
+                                        <a class="bg-gray action-restore swipeout-overswipe" href="#">Put back</a>
+                                    {{/js_compare}}
+                        </div>
+                    <div class="swipeout-actions-right">
+                                    
+                                    <a class="bg-blue item-action padding-10" data-action="decrease" href="#"><i class="f7-icons size-22">delete_round</i></a>
+                                    <a class="bg-blue item-action padding-10" data-action="increase" href="#"><i class="f7-icons size-22">add_round</i></a>
+                                    <a class="bg-red action-remove padding-10" href="#"><i class="f7-icons size-22">close</i></a>
+                    </div>
+                </li>
+        
+        {{else}}
+                {{#if show_adv_divider}}
+                        <li class="item-divider advertiser-sl-divider">  
+                            <img onerror="this.style.display='none';" src="{{advertiser_img}}" >
+                            <span>{{advertiser}}</span>
+                        </li>    
+                {{/if}}
+                
+                
+                <li data-id="{{id}}" data-index="{{@index}}" class="swipeout{{#if crossedOut}} crossed-out{{/if}}">
+                    <div class="swipeout-content">
+                            {{#if expired}} 
+                                <a href="#" class="item-link item-content expired">
+                            {{else}}    
+                                <a href="offer_item.html?type=foods&amp;id={{offer_id}}" class="item-link item-content">
+                            {{/if}}
+                                <div class="item-media">
+                                    <img class="srf-offerlist-image lazy lazy-fadein" data-src="{{img}}" >
+                                </div>
+                                <div class="item-inner">
+                                    <div class="item-title-row">
+                                        {{name}}
+                                    </div>
+                                    <div class="item-subtitle">
+                                        {{#if expired}}
+                                            <span class="offer-expired-info">EXPIRED</span>
+                                        {{else}}
+                                            {{#if price_new}}
+                                                <span class="food-newprice-list">{{price_new}} $</span>
+                                            {{/if}}
+                                        {{/if}}
+                                        x <span class="shoppinglist-quantity">{{quantity}}</span>
+
+                                        
+
+
+
+                                    </div>
+                                    <div class="item-text"><span class="offer-advertiser-text">{{advertiser}}</span>.
+                                        {{#if expired}}
+                                        {{else}}
+                                            <span class="offer-time-text">Discounts till {{rusdate_noyear system_date_to}}</span>
+                                        {{/if}}
+                                    </div>
+
+                                
+
+                                </div>
+                            </a>
+                            
+                    </div>
+                    
+                    <div class="swipeout-actions-left">
+                        {{#js_compare "this.crossedOut == false"}}
+                                <a class="bg-blue action-buy swipeout-overswipe" href="#">Buy</a>
+                            {{else}}
+                                <a class="bg-gray action-restore swipeout-overswipe" href="#">Put back</a>
+                            {{/js_compare}}
+                    </div>
+
+                    <div class="swipeout-actions-right">
+                            
+                            <a class="bg-blue item-action padding-10" data-action="decrease" href="#"><i class="f7-icons size-22">delete_round</i></a>
+                            <a class="bg-blue item-action padding-10" data-action="increase" href="#"><i class="f7-icons size-22">add_round</i></a>
+                            <a class="bg-red action-remove padding-10" href="#"><i class="f7-icons size-22">close</i></a>
+                    </div>
+
+                </li>
+                
+
+        {{/js_compare}} 
+    {{/each}}
+    </ul>

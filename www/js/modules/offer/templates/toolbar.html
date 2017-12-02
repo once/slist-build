@@ -1,0 +1,19 @@
+     <div class="toolbar-inner">
+        {{#js_compare "this.quantity > 0"}}
+            <span class="center small">
+                <a href="#" class="remove-from-shoppinglist"><i class="f7-icons">delete_round</i></a>&nbsp;
+                <a href="shoppinglist.html" class="goto-shoppinglist">In cart: <span class="quantity">{{quantity}}</span> <span class="price">( {{price}} $ )</span></a>
+                &nbsp;<a href="#" class="add-to-shoppinglist"><i class="f7-icons">add_round</i></a>
+            </span>
+        {{else}}
+            <a href="#" class="center add-to-shoppinglist"><i class="f7-icons">add</i> To cart</a>
+        {{/js_compare}}
+    </div>
+
+
+                
+                
+
+                
+
+                

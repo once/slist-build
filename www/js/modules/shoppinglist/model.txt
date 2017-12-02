@@ -1,0 +1,58 @@
+
+shoppinglists:
+
+    [{
+        id : 1,
+        server_id : ...,
+        name : 'Мой список',
+        comment : '',
+        items : [
+
+            {
+                id: GENERATED_ID,
+                name : offer_item.name,        
+                type : 'offer',
+                offer_id : offer_item.id,
+                img : offer_item.img,
+                advertiser : offer_item.advertiser,
+                advertiser_id :  offer_item.advertiser_id,
+                system_date_to : offer_item.system_date_to,
+                price_old : offer_item.price_old,
+                price_new : offer_item.price_new,
+
+                crossedOut : true/false,
+                quantity
+
+            },
+
+            {
+                id: GENERATED_ID,
+                name : name,
+                type : 'simple',
+                crossedOut : true/false,
+                quantity,
+                price_new
+
+
+            },
+
+            {
+
+            }
+        ]
+
+    }]
+
+
+    [{"id":1,
+    "name":"Мой список",
+    "comment":"",
+    "items":[
+        {"type":"offer",
+        "crossedOut":false,"quantity":2,
+        "id":"35524",
+        "name":"Asti DOC ACQUESI",
+        "img":"http://sale-russia.com/content/images/foods_imported/4a7bd559-bc83-4b3e-96eb-79724ba8cb17_mini.jpg",
+        "advertiser":"МЕТRО",
+        "advertiser_id":"57",
+        "system_date_to":"2017-03-08","price_old":"0","price_new":"500"}]}]
